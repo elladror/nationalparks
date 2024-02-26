@@ -31,12 +31,12 @@ jobs:
     steps:
     - name: Checkout
       id: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
    # https://github.com/redhat-actions/s2i-build#readme
     - name: S2I Build 
       id: build_image
-      uses: redhat-actions/s2i-build@v2
+      uses: redhat-actions/s2i-build@v4
       with:
         path_context: '.'
         builder_image: 'registry.access.redhat.com/ubi8/openjdk-11'
@@ -46,7 +46,7 @@ jobs:
     # https://github.com/redhat-actions/push-to-registry#readme
     - name: Push to Registry 
       id: push-to-registry
-      uses: redhat-actions/push-to-registry@v2
+      uses: redhat-actions/push-to-registry@v4
       with:
         image: ${{ steps.build_image.outputs.image }}
         tags: ${{ steps.build_image.outputs.tags }}
