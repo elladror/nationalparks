@@ -36,7 +36,7 @@ jobs:
    # https://github.com/redhat-actions/s2i-build#readme
     - name: S2I Build 
       id: build_image
-      uses: redhat-actions/s2i-build@v4
+      uses: redhat-actions/s2i-build@v2
       with:
         path_context: '.'
         builder_image: 'registry.access.redhat.com/ubi8/openjdk-11'
